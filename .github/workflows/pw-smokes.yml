@@ -22,6 +22,5 @@ jobs:
      - name: Run Playwright tests
        run: npm run test:smoke
      - name: Print custom message
-       run: |
-         echo "Hello Dear Anna!"
+       run: echo "Hello Dear Anna!"
       
