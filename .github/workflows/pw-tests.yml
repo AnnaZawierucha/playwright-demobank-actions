@@ -38,3 +38,11 @@ jobs:
          path: |
             ./playwright-report/**/*.*
             ./test-results/**/*.*
+     - name: Save cache always
+       id: save-playwright-cache
+       if: always()
+       uses: actions/cache/save@v3
+       with:
+         path: |
+           ~/.cache/ms-playwright
+         key: ${{ runner.os }}-playwright
