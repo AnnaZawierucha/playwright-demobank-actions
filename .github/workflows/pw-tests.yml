@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright Tests - 2 jobs parallel
 on:
  push:
    branches: [main, master]
@@ -19,7 +19,7 @@ jobs:
      - name: Get installed Playwright version
        id: playwright-version
        run: echo "PLAYWRIGHT_VERSION=$(node -e "console.log(require('./package-lock.json').dependencies['@playwright/test'].version)")" >> $GITHUB_ENV
-     - name: Cache playwright-binaries
+     - name: Cache playwright binaries
        uses: actions/cache@v3
        id: playwright-cache
        with:
