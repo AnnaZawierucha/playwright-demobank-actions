@@ -90,7 +90,8 @@ jobs:
          report_paths: "./playwright-report/results.xml"
 
  run-all-tests:
-   needs: [run-smoke-tests, prepare-env]
+   needs: [run-smoke-tests, prepare-env] 
+   #needs pozwala na dodanie sekwencyjności do jobów, all tests wykona się dopiero, gdy z sukcesem wykona się smoke i prepare_env
    timeout-minutes: 5
    runs-on: ubuntu-latest
    steps:
