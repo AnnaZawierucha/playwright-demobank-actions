@@ -46,7 +46,7 @@ jobs:
        run: npx playwright install --with-deps
 
  run-smoke-tests:
-   needs: [prepare-env]
+   needs: [prepare-env] #job uzależniony od joba prepare-env
    timeout-minutes: 5
    runs-on: ubuntu-latest
    steps:
