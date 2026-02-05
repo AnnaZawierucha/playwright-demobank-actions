@@ -9,9 +9,9 @@ on:
 #manual trigger
  workflow_dispatch:   
 # schedule workflow run --> crontab.guru to experiment with different time 
- schedule: 
+ #schedule: 
    # - cron: "5 4 * * *" 
-   - cron: "*/5 * * * 1-5"
+   # - cron: "*/5 * * * 1-5"
 
 permissions:
   contents: read
