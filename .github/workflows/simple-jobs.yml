@@ -1,0 +1,21 @@
+name: Playwright Tests - simple workflow triggered by workflow_call
+on:
+  #ta konfiguracja może zostać uruchomiona tylko za pomocą innego workflow
+  workflow_call:
+
+
+jobs:
+  run-tests: #pierwsze zadanie
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print on console
+        run: echo "run-tests of workflow"
+
+
+  final-job: #drugie zadanie
+    runs-on: ubuntu-latest
+    needs: [run-tests] #czeka z wykonaniem na pierwsze zadanie
+    if: always()
+    steps:
+      - name: Print on console
+        run: echo "final-job of workflow"
