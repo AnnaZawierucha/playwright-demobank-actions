@@ -1,10 +1,14 @@
 name: Playwright Tests - 2 jobs parallel
+#triggers
 on:
  push:
    branches: [main, master]
  pull_request:
    branches: [main, master]
-   
+
+#manual trigger
+ workflow_dispatch:   
+
 permissions:
   contents: read
   checks: write
